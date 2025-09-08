@@ -1,0 +1,235 @@
+// navbar
+
+.navbar {
+    width: 100%;
+    z-index: 9;
+    background: transparent;
+    border-bottom: 1px solid $dark;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #F4F5F1;
+
+    @include md {}
+
+
+    .navbar-brand {
+        img {
+            height: 60px;
+        }
+    }
+
+    .navbar-nav {
+        margin-left: auto;
+
+        @include md {
+            margin: 0;
+            padding: 2rem 0;
+        }
+
+        .nav-link {
+            position: relative;
+            color: $dark;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            letter-spacing: 0;
+            font-size: 1rem;
+            font-family: $en;
+            text-transform: uppercase;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 10px;
+                left: 10%;
+                display: block;
+                width: 80%;
+                height: 8px;
+                background: $primary;
+                border-radius: 100%;
+                z-index: -1;
+                opacity: 0;
+                transform: scale(0);
+                transition: .3s ease;
+
+                @include md {
+                    display: none;
+                }
+
+            }
+
+            &:hover {
+                animation: jello .5s ease;
+                transform-origin: center;
+
+                @include md {
+                    animation: none;
+                }
+
+                &::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            @include lg {}
+
+            @include md {
+                text-align: center;
+
+                padding: 1.5rem .5rem;
+                font-size: 1.5rem;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.navbar-collapse {
+    @include md {
+        &.collapse:not(.show) {
+            display: block !important;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: .3s ease;
+        }
+
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 100px;
+        visibility: visible;
+        pointer-events: all;
+        background: #edeeea5e;
+        height: 100vh !important;
+        backdrop-filter: blur(6px);
+        opacity: 1;
+        transition: .3s ease-in-out;
+    }
+
+    @include sm {
+        top: 66px;
+    }
+}
+
+
+// 選單按鈕
+
+.icon_menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 26px;
+    height: 17px;
+    display: none;
+
+    @include md {
+        display: block;
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+
+    span,
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        display: inline-block;
+        border-radius: 15px;
+        background: $dark;
+        transition: 0.3s ease;
+        opacity: 1;
+    }
+
+    span {
+        top: 50%;
+        transform: translateY(-50%);
+        transform-origin: center center;
+    }
+
+    &:before {
+        top: 0;
+        transform-origin: left top;
+    }
+
+    &:after {
+        bottom: 0;
+        transform-origin: left bottom;
+    }
+
+    &:not(.collapsed) {
+        span {
+            width: 0;
+            transform: translateY(-50%) scale(0);
+        }
+
+        &:before {
+            transform: rotate(35deg);
+            transition-delay: 0s, 0.2s;
+        }
+
+        &:after {
+            transform: rotate(-35deg);
+            transition-delay: 0s, 0.2s;
+        }
+    }
+}
+
+
+
+@keyframes jello {
+
+    0%,
+    11.1%,
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    22.2% {
+        -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+        transform: skewX(-12.5deg) skewY(-12.5deg)
+    }
+
+    33.3% {
+        -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+        transform: skewX(6.25deg) skewY(6.25deg)
+    }
+
+    44.4% {
+        -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+        transform: skewX(-3.125deg) skewY(-3.125deg)
+    }
+
+    55.5% {
+        -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+        transform: skewX(1.5625deg) skewY(1.5625deg)
+    }
+
+    66.6% {
+        -webkit-transform: skewX(-.78125deg) skewY(-.78125deg);
+        transform: skewX(-.78125deg) skewY(-.78125deg)
+    }
+
+    77.7% {
+        -webkit-transform: skewX(.390625deg) skewY(.390625deg);
+        transform: skewX(.390625deg) skewY(.390625deg)
+    }
+
+    88.8% {
+        -webkit-transform: skewX(-.1953125deg) skewY(-.1953125deg);
+        transform: skewX(-.1953125deg) skewY(-.1953125deg)
+    }
+}

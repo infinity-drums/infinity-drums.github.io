@@ -1,0 +1,171 @@
+.bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation 1s infinite;
+    opacity: .9;
+    visibility: visible;
+    z-index: -1;
+}
+
+@keyframes bg-animation {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    10% {
+        transform: translate(-5%, -5%)
+    }
+
+    20% {
+        transform: translate(-10%, 5%)
+    }
+
+    30% {
+        transform: translate(5%, -10%)
+    }
+
+    40% {
+        transform: translate(-5%, 15%)
+    }
+
+    50% {
+        transform: translate(-10%, 5%)
+    }
+
+    60% {
+        transform: translate(15%, 0)
+    }
+
+    70% {
+        transform: translate(0, 10%)
+    }
+
+    80% {
+        transform: translate(-15%, 0)
+    }
+
+    90% {
+        transform: translate(10%, 5%)
+    }
+
+    100% {
+        transform: translate(5%, 0)
+    }
+}
+
+.section_hero {
+    position: relative;
+}
+
+.home_txt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 900;
+
+        span {
+            color: #F4F5F1;
+            text-shadow: -1px -1px 0 $dark,
+                1px -1px 0 $dark,
+                -1px 1px 0 $dark,
+                1px 1px 0 $dark;
+        }
+    }
+}
+
+.hero_container {
+    height: calc(100vh - 87px);
+    display: flex;
+    align-items: center;
+}
+
+.drum {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    img {
+        width: 100%;
+    }
+}
+
+.keyboard {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+
+    a {
+        width: 40px;
+        height: 40px;
+        color: $dark;
+        font-family: $en;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-radius: 4px;
+        border: 1px solid $dark;
+    }
+}
+
+.cd {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        width: 150px;
+        transition: .6s ease-in;
+    }
+
+    &::before {
+        content: '';
+        width: 2px;
+        height: 120px;
+        background: $dark;
+        display: block;
+        transition: .4s ease-in;
+    }
+
+    &:hover {
+        &::before {
+            height: 160px;
+        }
+
+        img {
+            transform: rotate(-20deg);
+        }
+    }
+}
+
+// slogan
+.slogan {
+    background-color: $dark;
+    height: 100px;
+    background-image: url('../img/slogan.svg');
+    background-size: auto 90%;
+    background-repeat: repeat no-repeat;
+    animation: slogan infinite 60s linear;
+    animation-direction: alternate;
+}
+
+@keyframes slogan {
+    from {
+        background-position: 0 center;
+    }
+
+    to {
+        background-position: 600% center;
+    }
+}

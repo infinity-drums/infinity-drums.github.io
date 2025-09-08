@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+TC:400;500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+$en: 'Oswald',
+sans-serif;
+
+$primary:#F3C35C;
+$dark:#1F1D18;
+
+@mixin xl {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 575px) {
+        @content;
+    }
+}
+
+.en {
+    font-family: $en !important;
+}
+
+html {
+    scroll-padding-top: 66px;
+}
+
+body {
+    font-family: 'Oswald', 'Noto Sans TC', sans-serif;
+    color: $dark;
+    letter-spacing: .05em;
+    background: #F4F5F1;
+    // background: #ced0c9;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid $dark;
+    box-shadow: 0;
+    background: transparent;
+    border-radius: 0;
+
+    &:focus {
+        background: transparent;
+        box-shadow: none;
+        border: 1px solid $dark;
+    }
+}
+
+.form-select {
+
+}
+
+.btn {
+    border-radius: 0;
+}
+
+@import "_navbar.scss";
+@import "_home.scss";
+@import "_sheet.scss";
