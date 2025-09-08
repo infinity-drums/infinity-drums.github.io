@@ -6,8 +6,21 @@
     letter-spacing: 0;
     white-space: nowrap;
 
+    thead {
+        position: sticky;
+        top: 87px;
+        background: #ebece8;
+        z-index: 2;
+        box-shadow: 0 2px 0 $dark;
+
+        @include sm {
+            top: 68px;
+        }
+    }
+
     th {
-        border-bottom: 2px solid $dark;
+        // border-bottom: 2px solid $dark;
+        border: 0;
     }
 
     th,
@@ -66,6 +79,10 @@
     .song {
         font-weight: bold;
         font-size: 1.8rem;
+
+        @include sm {
+            font-size: 1.5rem;
+        }
     }
 
     .author {
@@ -382,6 +399,10 @@ body {
     &,
     * {
         cursor: none;
+
+        @include md {
+            cursor: default;
+        }
     }
 }
 
@@ -398,6 +419,10 @@ body {
     left: -50px;
     top: -50px;
     pointer-events: none;
+
+    @include md {
+        display: none;
+    }
 }
 
 .cursor {
@@ -414,4 +439,20 @@ body {
     will-change: transform;
     z-index: 9999;
     pointer-events: none;
+
+    @include md {
+        display: none;
+    }
+}
+
+.table_hide_lg {
+    @include lg {
+        display: none;
+    }
+}
+
+.table_name {
+    @include sm {
+        max-width: 150px;
+    }
 }

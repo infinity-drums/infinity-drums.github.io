@@ -47,7 +47,7 @@
         <section class="section_sheet">
             <div class="container">
                 <!-- 搜尋 -->
-                <div class="row mb-5 gx-2">
+                <div class="row mb-3 mb-sm-5 gx-2">
                     <div class="col-lg-3 col-md-5 col-8">
                         <label for="keyword" class="form-label">關鍵字</label>
                         <input type="text" v-model="keyword" class="form-control" placeholder="搜尋歌名或歌手">
@@ -68,26 +68,26 @@
                     </div>
                 </div>
                 <!-- 列表 -->
-                <div class="table-responsive">
+                <div class="">
                     <table class="table table-hover table_sheet table-sm">
                         <thead>
-                            <th>曲名/演出者</th>
-                            <th>樂器種類</th>
-                            <th>風格</th>
-                            <th>拍速</th>
-                            <th>拍號</th>
-                            <th>難易度</th>
+                            <th class="table_name">曲名/演出者</th>
+                            <th>樂器</th>
+                            <th class="table_hide_lg">風格</th>
+                            <th class="table_hide_lg">拍速</th>
+                            <th class="table_hide_lg">拍號</th>
+                            <th>難度</th>
                             <th>價格</th>
                             <th></th>
                         </thead>
                         <tbody>
                             <tr v-for="(item, index) in showList" :key="index">
-                                <td><span class="song">{{item[2]}}</span><span class="author">{{item[0]}} <small
+                                <td class="table_name"><span class="song">{{item[2]}}</span><span class="author">{{item[0]}} <small
                                             v-if="item[1]">feat.{{item[1]}}</small></span></td>
                                 <td class="en">{{item[4]}}</td>
-                                <td class="en">{{item[7]}}</td>
-                                <td class="en">{{item[8]}}</td>
-                                <td class="en">{{item[9]}}</td>
+                                <td class="en table_hide_lg">{{item[7]}}</td>
+                                <td class="en table_hide_lg">{{item[8]}}</td>
+                                <td class="en table_hide_lg">{{item[9]}}</td>
                                 <td>{{item[12]}}</td>
                                 <td class="en">NT${{item[13]}}</td>
                                 <!-- <td><a href="#" class="btn btn-sm btn-dark en"
@@ -120,7 +120,7 @@
                             <a href="#" class="btn_close" data-bs-dismiss="modal" aria-label="Close"><img
                                     src="img/close.svg" alt=""></a>
                             <div class="yt_frame">
-                                <div class="mb-5">
+                                <div class="mb-sm-5 mb-3">
                                     <span class="song">{{showItemArr[2]}}</span>
                                     <span class="author">{{showItemArr[0]}} <span
                                             v-if="showItemArr[1]">feat.{{showItemArr[1]}}</span></span>
@@ -159,7 +159,7 @@
                                         <h5>難度</h5>
                                         <p>{{showItemArr[12]}}</p>
                                     </div>
-                                    <div class="item" v-if="showItemArr[7]">
+                                    <div class="item w-100" v-if="showItemArr[7]">
                                         <h5 class="mb-1">風格</h5>
                                         <p class="skill_list"><span v-for="(item, index) in typeArr"
                                                 :key="index">{{item}}</span></p>
@@ -170,7 +170,7 @@
                                                 :key="index">{{item}}</span></p>
                                     </div>
                                     <hr class="w-100">
-                                    <div class="item w-100">
+                                    <div class="item w-100" v-if="showItemArr[14]">
                                         <h5 class="w-100 mb-1">小博老師簡評</h5>
                                         <p>{{showItemArr[14]}}</p>
                                     </div>
