@@ -92,11 +92,8 @@
                                 <td class="en table_hide_lg">{{item[9]}}</td>
                                 <td>{{item[12]}}</td>
                                 <td class="en">NT${{item[13]}}</td>
-                                <!-- <td><a href="#" class="btn btn-sm btn-dark en"
-                                        @click.prevent="showModal(index)">VIEW</a>
-                                </td> -->
                                 <td>
-                                    <a href="#" class="btn_more" @click.prevent="showModal(index)"></a>
+                                    <a href="#" class="btn_more" @click.prevent="showModal(index)"><span class="d-inline-block d-sm-none">MORE</span></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -109,14 +106,6 @@
         <div class="modal fade modal_sheet" id="modalSheet" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
-                    <!-- <div class="modal-header">
-                        <h5 class="modal-title">
-                            <span class="song">{{showItemArr[2]}}</span>
-                            <span class="author">{{showItemArr[0]}} <span
-                                    v-if="showItemArr[1]">feat.{{showItemArr[1]}}</span></span>
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div> -->
                     <div class="modal-body">
                         <div class="modal_row">
                             <a href="#" class="btn_close" data-bs-dismiss="modal" aria-label="Close"><img
@@ -192,82 +181,6 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
-        <!-- <div class="modal fade modal_sheet" id="modalSheet" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            <span class="song">{{showItemArr[2]}}</span>
-                            <span class="author">{{showItemArr[0]}} <span
-                                    v-if="showItemArr[1]">feat.{{showItemArr[1]}}</span></span>
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="ps" v-if="showItemArr[10]">{{showItemArr[10]}}</div>
-                        <div class="modal_row">
-                            <div class="yt_frame" id="ytContent"></div>
-                            <div class="detail">
-                                <div class="more_list">
-                                    <div class="item">
-                                        <h5>樂器</h5>
-                                        <p>{{showItemArr[4]}}</p>
-                                    </div>
-                                    <div class="item">
-                                        <h5>採譜</h5>
-                                        <p>{{showItemArr[3]}}</p>
-                                    </div>
-                                    <div class="item">
-                                        <h5>拍號</h5>
-                                        <p>{{showItemArr[9]}}</p>
-                                    </div>
-                                    <div class="item">
-                                        <h5>拍速</h5>
-                                        <p>{{showItemArr[8]}}</p>
-                                    </div>
-                                    <div class="item">
-                                        <h5>語言</h5>
-                                        <p>{{showItemArr[5]}}</p>
-                                    </div>
-                                    <div class="item">
-                                        <h5>性別</h5>
-                                        <p>{{showItemArr[6]}}</p>
-                                    </div>
-                                    <div class="item w-100">
-                                        <h5>難度</h5>
-                                        <p>{{showItemArr[12]}}</p>
-                                    </div>
-                                    <div class="item w-100" v-if="showItemArr[11]">
-                                        <h5>技巧</h5>
-                                        <p class="skill_list"><span v-for="(item, index) in skillArr"
-                                                :key="index">{{item}}</span></p>
-                                    </div>
-                                    <div class="item w-100" v-if="showItemArr[7]">
-                                        <h5>風格</h5>
-                                        <p class="skill_list"><span v-for="(item, index) in typeArr"
-                                                :key="index">{{item}}</span></p>
-                                    </div>
-                                    <div class="item w-100" v-if="showItemArr[10]">
-                                        <h5>備註</h5>
-                                        <p>{{showItemArr[10]}}</p>
-                                    </div>
-                                    <div class="item w-100">
-                                        <h5>簡評</h5>
-                                        <p>{{showItemArr[14]}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="price">完整曲譜 <span>NT${{showItemArr[13]}}</span></div>
-                        <a href="https://www.instagram.com/infinitydrumstudio/" class="btn_buy" target="_blank">IG 私訊購買</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
 
     </div>
 

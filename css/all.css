@@ -1013,6 +1013,22 @@ a {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 575px) {
+  .btn_more {
+    position: static;
+    color: #fff;
+    background: #000;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    width: auto;
+    padding: 2px 12px;
+  }
+  .btn_more:hover {
+    color: #fff;
+  }
+}
 
 .shape {
   display: none !important;
@@ -1061,6 +1077,7 @@ a {
 
 @media (max-width: 575px) {
   .table_name {
-    max-width: 150px;
+    max-width: 120px;
+    white-space: wrap;
   }
 }
