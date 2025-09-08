@@ -1,5 +1,9 @@
 .section_sheet {
     padding: 60px 0;
+
+    @include sm {
+        padding: 40px 0;
+    }
 }
 
 .table_sheet {
@@ -79,6 +83,7 @@
     .song {
         font-weight: bold;
         font-size: 1.8rem;
+        padding-right: 1.5rem;
 
         @include sm {
             font-size: 1.5rem;
@@ -332,6 +337,19 @@
             filter: invert(1);
         }
     }
+
+    @include sm {
+        right: 0;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        background: $primary;
+
+        img {
+            width: 18px;
+            filter: invert(1);
+        }
+    }
 }
 
 .btn_icon {
@@ -398,15 +416,16 @@ body {
 
     &,
     * {
-        cursor: none;
+        // cursor: none;
 
         @include xl {
-            cursor: default;
+            // cursor: default;
         }
     }
 }
 
 .shape {
+    display: none !important;
     position: fixed;
     height: 100px;
     width: 100px;
@@ -426,6 +445,7 @@ body {
 }
 
 .cursor {
+    display: none !important;
     position: fixed;
     background: #000;
     border-radius: 50%;

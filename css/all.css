@@ -312,6 +312,32 @@ a {
     transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
   }
 }
+.nav_ig {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000;
+}
+.nav_ig img {
+  height: 32px;
+}
+.nav_ig span {
+  display: inline-block;
+  border: 1px solid #000;
+  border-left: 0;
+  padding-right: 4px;
+  padding-left: 4px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.nav_ig:hover span {
+  background: #F3C35C;
+  color: #000;
+}
+
 .bg {
   position: fixed;
   top: -50%;
@@ -555,6 +581,11 @@ a {
 .section_sheet {
   padding: 60px 0;
 }
+@media (max-width: 575px) {
+  .section_sheet {
+    padding: 40px 0;
+  }
+}
 
 .table_sheet {
   letter-spacing: 0;
@@ -624,6 +655,7 @@ a {
 .modal_sheet .song {
   font-weight: bold;
   font-size: 1.8rem;
+  padding-right: 1.5rem;
 }
 @media (max-width: 575px) {
   .modal_sheet .song {
@@ -908,6 +940,20 @@ a {
   -webkit-filter: invert(1);
           filter: invert(1);
 }
+@media (max-width: 575px) {
+  .btn_close {
+    right: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: #F3C35C;
+  }
+  .btn_close img {
+    width: 18px;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+  }
+}
 
 .btn_icon {
   position: absolute;
@@ -968,18 +1014,8 @@ a {
   height: 100%;
 }
 
-body,
-body * {
-  cursor: none;
-}
-@media (max-width: 1200px) {
-  body,
-  body * {
-    cursor: default;
-  }
-}
-
 .shape {
+  display: none !important;
   position: fixed;
   height: 100px;
   width: 100px;
@@ -1000,6 +1036,7 @@ body * {
 }
 
 .cursor {
+  display: none !important;
   position: fixed;
   background: #000;
   border-radius: 50%;

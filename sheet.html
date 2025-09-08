@@ -30,7 +30,7 @@
         <nav class="navbar navbar-expand-md">
             <div class="container-lg">
                 <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt=""></a>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="navbar-nav">
                         <a class="nav-link" href="#">home</a>
                         <a class="nav-link" href="#">SERVICE</a>
@@ -40,7 +40,8 @@
                 </div>
                 <div class="icon_menu collapsed" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span></span>
-                </div>
+                </div> -->
+                <a href="https://www.instagram.com/infinitydrumstudio/" target="_blank" class="nav_ig"><img src="img/ig.svg" alt=""> <span>IG購買曲譜</span></a>
             </div>
         </nav>
         <!-- 譜 -->
@@ -170,13 +171,13 @@
                                         <p class="skill_list"><span v-for="(item, index) in skillArr"
                                                 :key="index">{{item}}</span></p>
                                     </div>
-                                    <hr class="w-100">
+                                    <hr class="w-100" v-if="showItemArr[14]">
                                     <div class="item w-100" v-if="showItemArr[14]">
                                         <h5 class="w-100 mb-1">小博老師簡評</h5>
                                         <p>{{showItemArr[14]}}</p>
                                     </div>
                                 </div>
-                                <a href="#" class="btn_icon d-none d-lg-flex">
+                                <a href="https://www.instagram.com/infinitydrumstudio/" target="_blank" class="btn_icon d-none d-lg-flex">
                                     <span class="txt">IG私訊購買</span>
                                     <span class="icon"><img src="img/send.svg" alt=""></span>
                                 </a>
@@ -347,7 +348,7 @@
         app.mount('#app');
     </script>
 
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             const mediaQuery = window.matchMedia("(min-width: 1200px)"); // 只在桌機跑
 
@@ -370,7 +371,7 @@
             }
         });
 
-    </script>
+    </script> -->
 
 </body>
 

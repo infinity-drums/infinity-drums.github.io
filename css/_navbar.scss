@@ -18,6 +18,7 @@
     .navbar-brand {
         img {
             height: 60px;
+
             @include sm {
                 height: 45px;
             }
@@ -235,5 +236,28 @@
     88.8% {
         -webkit-transform: skewX(-.1953125deg) skewY(-.1953125deg);
         transform: skewX(-.1953125deg) skewY(-.1953125deg)
+    }
+}
+
+.nav_ig {
+    display: flex;
+    align-items: center;
+    color: #000;
+    img {
+        height: 32px;
+    }
+    span {
+        display: inline-block;
+        border: 1px solid #000;
+        border-left: 0;
+        padding-right: 4px;
+        padding-left: 4px;
+        transition: .3s ease;
+    }
+    &:hover {
+        span {
+            background: $primary;
+            color: #000;
+        }
     }
 }
