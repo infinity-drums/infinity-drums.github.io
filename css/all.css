@@ -972,7 +972,7 @@ body,
 body * {
   cursor: none;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1200px) {
   body,
   body * {
     cursor: default;
@@ -993,7 +993,7 @@ body * {
   top: -50px;
   pointer-events: none;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1200px) {
   .shape {
     display: none;
   }
@@ -1010,7 +1010,7 @@ body * {
   z-index: 9999;
   pointer-events: none;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1200px) {
   .cursor {
     display: none;
   }

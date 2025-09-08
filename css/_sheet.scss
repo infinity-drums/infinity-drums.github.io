@@ -400,7 +400,7 @@ body {
     * {
         cursor: none;
 
-        @include md {
+        @include xl {
             cursor: default;
         }
     }
@@ -420,7 +420,7 @@ body {
     top: -50px;
     pointer-events: none;
 
-    @include md {
+    @include xl {
         display: none;
     }
 }
@@ -440,7 +440,7 @@ body {
     z-index: 9999;
     pointer-events: none;
 
-    @include md {
+    @include xl {
         display: none;
     }
 }

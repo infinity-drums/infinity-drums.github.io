@@ -82,8 +82,9 @@
                         </thead>
                         <tbody>
                             <tr v-for="(item, index) in showList" :key="index">
-                                <td class="table_name"><span class="song">{{item[2]}}</span><span class="author">{{item[0]}} <small
-                                            v-if="item[1]">feat.{{item[1]}}</small></span></td>
+                                <td class="table_name"><span class="song">{{item[2]}}</span><span
+                                        class="author">{{item[0]}} <small v-if="item[1]">feat.{{item[1]}}</small></span>
+                                </td>
                                 <td class="en">{{item[4]}}</td>
                                 <td class="en table_hide_lg">{{item[7]}}</td>
                                 <td class="en table_hide_lg">{{item[8]}}</td>
@@ -335,7 +336,7 @@
                     .then((response) => response.json())
                     .then((data) => {
                         let vm = this;
-                        console.log(data.values)
+                        // console.log(data.values)
                         vm.allList = data.values;
                         vm.showList = data.values;
                     })
@@ -348,24 +349,27 @@
 
     <script>
         $(document).ready(function () {
-            document.body.addEventListener("mousemove", evt => {
-                const mouseX = evt.clientX;
-                const mouseY = evt.clientY;
+            const mediaQuery = window.matchMedia("(min-width: 1200px)"); // 只在桌機跑
 
-                gsap.set(".cursor", {
-                    x: mouseX,
-                    y: mouseY
+            if (mediaQuery.matches) {
+                document.body.addEventListener("mousemove", evt => {
+                    const mouseX = evt.clientX;
+                    const mouseY = evt.clientY;
+
+                    gsap.set(".cursor", {
+                        x: mouseX,
+                        y: mouseY
+                    });
+
+                    gsap.to(".shape", {
+                        x: mouseX,
+                        y: mouseY,
+                        stagger: -0.1
+                    });
                 });
-
-
-                gsap.to(".shape", {
-                    x: mouseX,
-                    y: mouseY,
-                    stagger: -0.1
-                });
-
-            });
+            }
         });
+
     </script>
 
 </body>
