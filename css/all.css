@@ -617,6 +617,11 @@ a {
   position: relative;
   border-bottom: 1px solid #1F1D18;
 }
+.table_sheet tr.row-clickable {
+  cursor: pointer;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
 .table_sheet .author {
   display: block;
   font-size: 13px;
@@ -820,7 +825,7 @@ a {
 }
 @media (max-width: 575px) {
   .yt_frame {
-    padding: 1.5rem;
+    padding: 1rem 2rem 1rem 2rem;
   }
 }
 .yt_frame iframe {
@@ -858,18 +863,23 @@ a {
 }
 @media (max-width: 575px) {
   .detail {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 }
 
 .more_list {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 1rem;
+}
+@media (max-width: 575px) {
+  .more_list {
+    margin: 0;
+  }
 }
 .more_list .item {
   width: 30%;
@@ -892,6 +902,47 @@ a {
   margin: 0;
   font-weight: normal;
 }
+.more_list .quote {
+  position: relative;
+  padding: 1.5rem 1rem;
+  border: 1px solid #000;
+  margin: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+@media (max-width: 575px) {
+  .more_list .quote {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+}
+.more_list .quote .q_item {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.more_list .quote img {
+  width: 80%;
+  margin: auto;
+}
+.more_list .quote .l {
+  left: -1.5rem;
+  top: -1.5rem;
+}
+.more_list .quote .r {
+  right: -1.5rem;
+  bottom: -1.5rem;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.more_list .quote p {
+  position: relative;
+  z-index: 2;
+}
 
 .skill_list {
   display: -webkit-box;
@@ -906,7 +957,7 @@ a {
 }
 .skill_list span {
   background: #dfdfdf;
-  font-size: 14px;
+  font-size: 0.9rem;
   border-radius: 2px;
   padding: 0 0.5rem;
 }
@@ -957,7 +1008,7 @@ a {
 
 .btn_icon {
   position: absolute;
-  right: 2rem;
+  right: 3rem;
   bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
