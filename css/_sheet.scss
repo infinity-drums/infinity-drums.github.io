@@ -1,6 +1,17 @@
 .section_sheet {
     padding: 60px 0;
 
+    .title {
+        h1 {
+            font-weight: bold;
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
+
     @include sm {
         padding: 40px 0;
     }
@@ -342,6 +353,7 @@
             bottom: -1.5rem;
             transform: rotate(180deg);
         }
+
         p {
             position: relative;
             z-index: 2;

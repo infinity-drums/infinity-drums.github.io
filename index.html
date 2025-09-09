@@ -48,25 +48,35 @@
         <!-- 譜 -->
         <section class="section_sheet">
             <div class="container">
-                <!-- 搜尋 -->
-                <div class="row mb-3 mb-sm-5 gx-2">
-                    <div class="col-lg-3 col-md-5 col-8">
-                        <label for="keyword" class="form-label">關鍵字</label>
-                        <input type="text" v-model="keyword" class="form-control" placeholder="搜尋歌名或歌手">
+                <div class="row align-items-center mb-5">
+                    <div class="col-xl-6 col-lg-5 mb-4 mb-lg-0">
+                        <div class="title">
+                            <h1>曲譜列表</h1>
+                            <p class="mb-0">以下曲譜可供購買，歡迎透過 IG 聯繫</p>
+                        </div>
                     </div>
-                    <!-- <div class="col-lg-2 col-md-5 col-8">
-                        <label for="" class="form-label">樂器種類</label>
-                        <select class="form-select">
-                            <option selected>請選擇</option>
-                        </select>
-                    </div> -->
-                    <div class="col-lg-1 col-md-2 col-3 mt-auto">
-                        <a href="#" class="btn btn-dark w-100" @click.prevent="filteredItems">搜尋</a>
-                    </div>
-                    <div class="col-1 mt-auto pl-5">
-                        <a @click.prevent="showList = allList; keyword = ''" class="reset pb-1 d-block">
-                            <img src="img/undo.svg" alt="" height="24">
-                        </a>
+                    <div class="col-xl-6 col-lg-7">
+                        <!-- 搜尋 -->
+                        <div class="row gx-2 justify-content-lg-end">
+                            <div class="col-lg-5 col-md-5 col-8">
+                                <!-- <label for="keyword" class="form-label">關鍵字</label> -->
+                                <input type="text" v-model="keyword" class="form-control" placeholder="搜尋歌名或歌手">
+                            </div>
+                            <!-- <div class="col-lg-2 col-md-5 col-8">
+                                <label for="" class="form-label">樂器種類</label>
+                                <select class="form-select">
+                                    <option selected>請選擇</option>
+                                </select>
+                            </div> -->
+                            <div class="col-lg-2 col-md-2 col-3 mt-auto">
+                                <a href="#" class="btn btn-dark w-100" @click.prevent="filteredItems">搜尋</a>
+                            </div>
+                            <div class="col-1 mt-auto pl-5">
+                                <a @click.prevent="showList = allList; keyword = ''" class="reset pb-1 d-block">
+                                    <img src="img/undo.svg" alt="" height="24">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- 列表 -->
@@ -116,7 +126,8 @@
                             <div class="yt_frame">
                                 <div class="mb-sm-5 mb-3">
                                     <span class="song">{{showItemArr[2]}}</span>
-                                    <span class="author">{{showItemArr[0]}} <span class="d-inline-block d-sm-none"><span v-if="showItemArr[10]">,</span> {{showItemArr[10]}}</span><span
+                                    <span class="author">{{showItemArr[0]}} <span class="d-inline-block d-sm-none"><span
+                                                v-if="showItemArr[10]">,</span> {{showItemArr[10]}}</span><span
                                             v-if="showItemArr[1]">feat.{{showItemArr[1]}}</span></span>
                                 </div>
                                 <div id="ytContent" class="mb-2"></div>
